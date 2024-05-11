@@ -1,0 +1,51 @@
+.articles {
+  padding-top: 76px;
+  padding-bottom: 44px;
+  display: block;
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+  &__all {
+    padding: 8px 40px 8px 8px;
+    @extend%rubik-400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $hardest;
+    position: relative;
+    &::after {
+      position: absolute;
+      content: "";
+      background-image: url("/images/icons/arrow-right.svg");
+      background-size: cover;
+      width: 7px;
+      height: 13px;
+      top: 13px;
+      right: 20px;
+    }
+    &:hover {
+      color: darken($hardest, 40%);
+    }
+  }
+  &__item + &__item {
+    margin-left: 32px;
+  }
+  &__items {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+@media (max-width: 600px) {
+  .articles {
+    &__items{
+      flex-direction: column;
+    }
+    &__item + &__item {
+    margin-left: 0px;
+    margin-top: 20px;
+  }
+  }
+}
+
